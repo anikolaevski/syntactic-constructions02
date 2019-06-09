@@ -19,6 +19,22 @@ test('Test findBy "name", "урон" ', () => {
   expect(result).toEqual(expected);
 });
 
+test('Test findBy "name", "помощь" ', () => {
+  const sourceData = [
+    { name: 'маг', type: 'character', description: 'Персонаж, обладающий магическими способностями' },
+    { name: 'заклинание', type: 'attack', description: 'Атака магическим заклинанием' },
+    { name: 'урон', type: 'help', description: 'Страница описания элемента интерфейса' },
+  ];
+  const finder = findBy('name', 'помощь');
+
+  const result = sourceData.filter(finder);
+
+  const expected = [];
+
+  expect(result).toEqual(expected);
+});
+
+
 test('Test findBy "type", "attack" ', () => {
   const sourceData = [
     { name: 'маг', type: 'character', description: 'Персонаж, обладающий магическими способностями' },
@@ -34,6 +50,21 @@ test('Test findBy "type", "attack" ', () => {
     type: 'attack',
     description: 'Атака магическим заклинанием',
   }];
+
+  expect(result).toEqual(expected);
+});
+
+test('Test findBy "type", "attack" ', () => {
+  const sourceData = [
+    { name: 'маг', type: 'character', description: 'Персонаж, обладающий магическими способностями' },
+    { name: 'заклинание', type: 'attack', description: 'Атака магическим заклинанием' },
+    { name: 'урон', type: 'help', description: 'Страница описания элемента интерфейса' },
+  ];
+  const finder = findBy('type', 'fight');
+
+  const result = sourceData.filter(finder);
+
+  const expected = [];
 
   expect(result).toEqual(expected);
 });
